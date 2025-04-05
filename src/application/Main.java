@@ -1,6 +1,6 @@
 package application;
 
-import entities.Pessoa;
+import entities.Person;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class Main {
 
         System.out.print("Quantas pessoas serão digitadas? ");
         int quantity = sc.nextInt();
-        Pessoa[] pessoas = new Pessoa[quantity];
+        Person[] people = new Person[quantity];
 
         sc.nextLine();
         for (int i = 0; i < quantity; i++) {
@@ -24,12 +24,12 @@ public class Main {
             double height = sc.nextDouble();
             sc.nextLine();
 
-            pessoas[i] = new Pessoa(name, age, height);
+            people[i] = new Person(name, age, height);
         }
 
-        double averageHeight = Pessoa.averageHeight(pessoas);
+        double averageHeight = Person.averageHeight(people);
         System.out.printf("\nAltura média das pessoas: %.2f%n", averageHeight);
-        System.out.printf("Porcentagem das pessoas menores de 16 anos: %.1f%%\n", Pessoa.percent(pessoas));
+        System.out.printf("Porcentagem das pessoas menores de 16 anos: %.1f%%\n", Person.percentMinor(people));
 
 
 

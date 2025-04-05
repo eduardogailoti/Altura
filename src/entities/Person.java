@@ -1,11 +1,11 @@
 package entities;
 
-public class Pessoa {
+public class Person {
     private String name;
     private int age;
     private double height;
 
-    public Pessoa(String name, int age, double height) {
+    public Person(String name, int age, double height) {
         this.name = name;
         this.age = age;
         this.height = height;
@@ -23,27 +23,27 @@ public class Pessoa {
         return height;
     }
 
-    public static double averageHeight(Pessoa[] pessoas) {
+    public static double averageHeight(Person[] people) {
         double sumHeight = 0;
-        for (Pessoa p : pessoas) {
+        for (Person p : people) {
             sumHeight += p.getHeight();
         }
-        return sumHeight / pessoas.length;
+        return sumHeight / people.length;
     }
 
-    public static double percent(Pessoa[] pessoas) {
-        int menores = 0;
+    public static double percentMinor(Person[] people) {
+        int minor = 0;
 
         System.out.println("Pessoas com menos de 16 anos:");
 
-        for (Pessoa p : pessoas) {
+        for (Person p : people) {
             if (p.getAge() < 16) {
                 System.out.println(p.getName());
-                menores++;
+                minor++;
             }
         }
 
-        double percent = (double) menores / pessoas.length * 100;
+        double percent = (double) minor / people.length * 100;
         return percent;
     }
 }
